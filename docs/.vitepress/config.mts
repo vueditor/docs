@@ -18,11 +18,27 @@ export default defineConfig({
   locales: {
     root: {
       label:'English',
-      lang:'en-US'
+      lang:'en-US',
+      themeConfig:{
+        nav: [
+          {
+            text: 'Rich text',
+            link:'/rich-text/introduction'
+          }
+        ]
+      }
     },
     zh: {
       label:'简体中文',
-      lang:'zh-CN'
+      lang:'zh-CN',
+      themeConfig: {
+        nav: [
+          {
+            text: '富文本编辑器',
+            link:'/zh/rich-text/introduction'
+          }
+        ]
+      }
     }
   }
 })
