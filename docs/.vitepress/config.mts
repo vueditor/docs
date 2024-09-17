@@ -1,4 +1,11 @@
 import { defineConfig } from 'vitepress'
+import { 
+  InlineLinkPreviewElementTransform 
+} from '@nolebase/vitepress-plugin-inline-link-preview/markdown-it'
+import { 
+  GitChangelog, 
+  GitChangelogMarkdownSection, 
+} from '@nolebase/vitepress-plugin-git-changelog/vite'
 
 export default defineConfig({
   title: "Vueditor",
@@ -40,5 +47,29 @@ export default defineConfig({
         ]
       }
     }
+  },
+  vite: {
+    optimizeDeps: {
+      exclude: [ 
+        '@nolebase/vitepress-plugin-enhanced-readabilities/client', 
+      ], 
+    },
+    ssr: { 
+      noExternal: [ 
+        '@nolebase/vitepress-plugin-enhanced-readabilities', 
+        '@nolebase/vitepress-plugin-highlight-targeted-heading', 
+      ], 
+    }, 
+    plugins:[
+      GitChangelog({ 
+        repoURL: () => 'https://github.com/vueditor/docs', 
+      }), 
+      GitChangelogMarkdownSection(), 
+    ]
+  },
+  markdown: {
+    config(md) { 
+      md.use(InlineLinkPreviewElementTransform) 
+    } 
   }
 })
