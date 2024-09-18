@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Vueditor
-  text: Various editors and their ecosystems developed based on Vue.js
+  text: Various editors and all the other stuffs.
   tagline: Other frameworks can be developed for reference
 
 features:

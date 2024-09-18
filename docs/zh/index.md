@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: Vueditor
-  text: 基于 Vue.js 开发的各种编辑器及其生态
+  text: 各种各样的编辑器及其相关插件
   tagline: 其他框架可参考开发
 
 features:
